@@ -1,0 +1,1116 @@
+/* Icon colors - keeping these at the top to override Bootstrap defaults */
+.bi {
+    color: var(--text) !important;
+}
+
+.dark-mode .bi {
+    color: var(--text) !important;
+}
+
+.btn .bi {
+    color: inherit !important;
+}
+
+.btn-primary .bi {
+    color: #ffffff !important;
+}
+
+/* Root variables */
+:root {
+    /* Light mode colors */
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border: #dee2e6;
+    --text: #2c3e50;
+    --accent-color: #3b82f6;
+    --secondary-text: #64748b;
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    
+    /* Dark mode colors */
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --dark-border: #2d2d2d;
+    --dark-text: #e2e8f0;
+    --dark-secondary-text: #94a3b8;
+    --dark-hover-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    --bg: var(--dark-bg);
+    --card-bg: var(--dark-card);
+    --border: var(--dark-border);
+    --text: var(--dark-text);
+    --secondary-text: var(--dark-secondary-text);
+    --hover-bg: var(--dark-hover-bg);
+}
+
+.container {
+    max-width: 1200px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    color: var(--text);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+.card .grade-display {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    text-align: center;
+    color: var(--text);
+}
+
+.grade-display {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.grade-value {
+    color: var(--accent-color);
+}
+
+.card .btn-close {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+}
+
+.card .btn-close:hover {
+    opacity: 1 !important;
+    transform: scale(1.1);
+}
+
+.card .btn-outline-danger {
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.card .btn-outline-danger:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background-color: var(--card-bg);
+    border-bottom-color: var(--border);
+}
+
+.grade-progress-container {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0.5rem auto;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.grade-progress-bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    background-color: var(--accent-color) !important;
+}
+
+.table {
+    color: var(--text);
+}
+
+.table td, .table th {
+    border-color: var(--border);
+    color: inherit;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.modal-header {
+    border-bottom-color: var(--border);
+}
+
+.modal-footer {
+    border-top-color: var(--border);
+}
+
+.form-control, .form-select {
+    background-color: var(--card-bg);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--card-bg);
+    border-color: var(--accent-color);
+    color: var(--text);
+}
+
+.form-control::placeholder {
+    color: var(--secondary-text);
+    opacity: 0.7;
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.grade-breakdown {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: var(--card-bg);
+}
+
+.assignments-list {
+    margin-top: 1.5rem;
+}
+
+.assignment-type {
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background-color: var(--card-bg);
+    transition: all 0.2s ease;
+}
+
+.assignment-type:hover {
+    transform: translateX(4px);
+}
+
+.assignment-name {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.assignment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.assignment-info .type-badge {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.due-date {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.due-date i {
+    font-size: 0.8rem;
+}
+
+.practice-type { 
+    border-left: 4px solid rgba(13, 110, 253, 0.7);
+}
+
+.minor-type { 
+    border-left: 4px solid rgba(25, 135, 84, 0.7);
+}
+
+.major-type { 
+    border-left: 4px solid rgba(220, 53, 69, 0.7);
+}
+
+.btn-outline-danger {
+    padding: 0.25rem 0.5rem;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-danger:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.alert {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    background-color: var(--card-bg);
+    border-color: var(--border);
+    border-radius: 12px;
+}
+
+.assignment-form {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.assignment-form .input-group {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+}
+
+.assignment-form .input-group > * {
+    border-radius: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.assignment-form .input-group .btn {
+    flex: 0 0 auto;
+}
+
+.assignment-form .input-group > *:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.assignment-form .input-group > *:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.assignment-form .btn {
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+}
+
+.assignment-form .btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 85%, black);
+}
+
+.assignment-form.show {
+    display: block;
+}
+
+.btn {
+    margin-right: 5px;
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 85%, black) !important;
+    border-color: color-mix(in srgb, var(--accent-color) 85%, black) !important;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    color: white;
+    background-color: #dc3545;
+}
+
+/* Background blur effect */
+.bg-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    opacity: 0.1;
+    z-index: -1;
+    filter: blur(150px);
+}
+
+/* Modern Header Styles */
+.header-container {
+    width: 50%;
+    margin: 2rem auto 3rem;
+    background: rgba(59, 130, 246, 0.08);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 50px;
+    padding: 1.25rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 24px -1px rgba(0, 0, 0, 0.06),
+        0 2px 8px -1px rgba(0, 0, 0, 0.04);
+}
+
+.header-container h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-container h1 i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: 
+        radial-gradient(circle at 20% 150%, rgba(147, 197, 253, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% -50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+    filter: blur(40px);
+    animation: gradientMove 15s ease infinite;
+    z-index: 0;
+}
+
+@keyframes gradientMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-5%, 5%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-icon,
+.btn-add-course {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    border-radius: 50% !important;
+    color: var(--text) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-icon:hover,
+.btn-add-course:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateY(-2px);
+    color: var(--accent-color) !important;
+}
+
+.btn-icon:active,
+.btn-add-course:active {
+    transform: translateY(0);
+}
+
+.btn-icon i,
+.btn-add-course i {
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+}
+
+.btn-add-course {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    border-radius: 50% !important;
+    color: var(--text) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-add-course:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateY(-2px);
+    color: var(--accent-color) !important;
+}
+
+.btn-add-course:active {
+    transform: translateY(0);
+}
+
+.btn-add-course i {
+    margin: 0;
+    line-height: 1;
+    color: #ffffff;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .header-container {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 1rem auto 2rem;
+    }
+    
+    .header-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Modern Dark Mode */
+.dark-mode {
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.dark-mode .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
+.dark-mode .card-body {
+    padding: 1.25rem;
+}
+
+.dark-mode .card-footer {
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.dark-mode .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+}
+
+.dark-mode .modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+}
+
+.dark-mode .form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dark-mode .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
+/* Grade Display */
+.grade-display {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    text-align: center;
+    color: var(--text);
+}
+
+.grade-progress {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.grade-progress-bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    background-color: var(--accent-color) !important;
+}
+
+/* Card Title and Description */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.card-text {
+    color: var(--secondary-text);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Drag Handle */
+.drag-handle {
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s ease;
+}
+
+.drag-handle:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Notes Styles */
+.notes-container {
+    max-width: 100%;
+}
+
+.note-group {
+    margin-bottom: 2rem;
+}
+
+.note-date {
+    color: #6c757d;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.note-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 4px solid #ccc;
+}
+
+.note-type-lecture { border-left-color: #007bff; }
+.note-type-homework { border-left-color: #28a745; }
+.note-type-activity { border-left-color: #ffc107; }
+.note-type-reminder { border-left-color: #dc3545; }
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.note-type {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.note-type i {
+    margin-right: 0.25rem;
+}
+
+.note-topic {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
+.note-details {
+    color: #495057;
+    white-space: pre-wrap;
+    margin-bottom: 0.5rem;
+}
+
+#notesModal .modal-dialog {
+    max-width: 800px;
+}
+
+#notesModal .modal-body {
+    padding: 1.5rem;
+}
+
+#addNoteModal .modal-dialog {
+    max-width: 600px;
+}
+
+#noteForm textarea {
+    min-height: 120px;
+}
+
+.notes-list {
+    margin-top: 1rem;
+}
+
+/* Enhanced Tab Styles */
+.nav-tabs {
+    border-color: var(--border);
+}
+
+.nav-tabs .nav-link {
+    color: var(--secondary-text);
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: var(--border);
+    background-color: var(--hover-bg);
+    color: var(--text);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--card-bg);
+    border-color: var(--border);
+    border-bottom-color: var(--card-bg);
+    color: var(--accent-color) !important;
+}
+
+.btn-close {
+    filter: none;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.btn-secondary {
+    background-color: var(--hover-bg);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.modal .btn {
+    color: #ffffff !important;
+}
+
+.modal .btn-close {
+    background-color: transparent !important;
+}
+
+/* Settings Modal Styles */
+.settings-section {
+    margin-bottom: 1.5rem;
+}
+
+.settings-section:last-child {
+    margin-bottom: 0;
+}
+
+.settings-title {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+}
+
+.setting-label i {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Settings color options */
+.color-options {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.color-option {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    box-shadow: 0 0 0 2px var(--text);
+}
+
+/* Form Controls in Dark Mode */
+.dark-mode .form-check-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.dark-mode .form-select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.dark-mode .form-select option {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .form-control-color {
+    width: 3rem;
+    height: 2rem;
+    padding: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: color-mix(in srgb, var(--accent-color) 85%, black);
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.progress-bar {
+    background-color: var(--accent-color) !important;
+}
+
+/* Drag and Drop Styles */
+.col {
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.col.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.col.drag-over .card {
+    border: 2px dashed var(--accent-color);
+    transform: scale(1.02);
+}
+
+.card {
+    transition: all 0.2s ease;
+}
+
+.drag-handle {
+    cursor: grab;
+    color: #666;
+    padding: 0.5rem;
+}
+
+.dragging .drag-handle {
+    cursor: grabbing;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 0.5rem 1rem;
+}
+
+.card-header .btn-link {
+    text-decoration: none;
+}
+
+.card-header .btn-link:hover {
+    color: #0056b3 !important;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1060;
+}
+
+.import-modal {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 500px;
+    border: 2px solid var(--border);
+}
+
+.import-example {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+}
+
+#importText {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border);
+    resize: vertical;
+}
+
+#importText:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Ensure all text elements use theme colors */
+* {
+    color: var(--text);
+}
+
+.text-muted, small {
+    color: var(--secondary-text) !important;
+}
+
+/* Override specific text colors */
+.btn-primary, 
+.btn-primary .bi,
+.btn-danger,
+.btn-danger .bi {
+    color: #ffffff !important;
+}
+
+.btn-secondary {
+    color: var(--text) !important;
+}
+
+.btn-link {
+    color: var(--accent-color) !important;
+}
+
+/* Form inputs */
+input, 
+textarea, 
+select,
+.form-control,
+.form-select {
+    color: var(--text) !important;
+}
+
+/* Modal specific text */
+.modal-title,
+.modal-body,
+.modal-header,
+.modal-footer {
+    color: var(--text);
+}
+
+/* List items and spans */
+li, span {
+    color: var(--text);
+}
+
+/* Assignment items */
+.assignment-item {
+    color: var(--text);
+}
+
+.assignment-item .grade {
+    color: var(--accent-color);
+}
+
+/* Notes text */
+.note-text {
+    color: var(--text);
+}
+
+.note-date {
+    color: var(--secondary-text);
+}
+
+/* Settings text */
+.settings-section h6 {
+    color: var(--text);
+}
+
+.setting-label {
+    color: var(--text);
+}
+
+/* Practice type badges */
+.practice-type {
+    color: var(--text) !important;
+    background-color: var(--hover-bg) !important;
+}
+
+/* Grade breakdown text */
+.grade-breakdown {
+    color: var(--text);
+}
+
+.grade-breakdown-item {
+    color: var(--text);
+}
+
+/* Import modal text */
+.import-example pre {
+    color: var(--secondary-text);
+}
+
+/* Alert text */
+.alert {
+    color: var(--text) !important;
+}
+
+/* List view styles */
+.list-view {
+    padding: 1rem;
+}
+
+.list-view .table {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.list-view .table th {
+    background-color: var(--hover-bg);
+    border-bottom: 2px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.list-view .table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom-color: var(--border);
+}
+
+.list-view .grade-value {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.list-view .grade-progress-container {
+    height: 6px;
+    background-color: var(--hover-bg);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.list-view .grade-progress {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.list-view .btn-group {
+    gap: 0.5rem;
+}
+
+.list-view .table tr:hover {
+    background-color: var(--hover-bg);
+}
